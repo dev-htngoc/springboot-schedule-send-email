@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác Thực Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-application__name {
+            font-size: 2rem;
+            color: #0e0e0e;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .header-title {
+            padding: 10px 0;
+            color: #fff;
+            background-color: #007bff;
+        }
+        .header-title h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .verification-code {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .header-application__name {
+                font-size: 1.5rem;
+            }
+            .header-title h1 {
+                font-size: 1.2rem;
+            }
+            .content p {
+                font-size: 14px;
+            }
+            .verification-code {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-application__name">Blog | htngoc</div>
+        <div class="header-title">
+            <h1>Xác Thực Email Của Bạn</h1>
+        </div>
+    </div>
+    <div class="content">
+        <p>Chào <strong th:text="${user.userName}">haabc aasd </strong>,</p>
+        <p>Cảm ơn bạn đã đăng ký tài khoản tại <strong>Blog | htngoc</strong>.
+            Để hoàn tất quá trình đăng ký và kích hoạt tài khoản của bạn, vui lòng sử dụng mã xác thực dưới đây:</p>
+        <div class="verification-code" th:text="${user.verificationCode}">123456</div>
+        <p>Nếu bạn không đăng ký tài khoản tại <strong>Blog | htngoc</strong>, vui lòng bỏ qua email này.</p>
+        <p>Xin chân thành cảm ơn.</p>
+    </div>
+    <div class="footer">
+        <p>&copy;<span>Blog | htngoc</span>. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
